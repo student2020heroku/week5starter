@@ -3,8 +3,10 @@ module.exports = function(express, bodyParser, fs, http) {
 
     app
     .get('/login/', (req, res) => res.send('eliasgoss'))
-    .get('/code/', (req, res) => fs.createReadStream(__filename).pipe(res))
-    .all('*', (req, res) => res.send('Working!'));
+    .get('/code/', (req, res) => {});
+    
+    //... остальные маршруты
+
 
     // проверяющий алгоритм может запустить этот код в своей песочнице
     // передав ему перечисленные зависимости
