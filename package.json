@@ -1,10 +1,18 @@
 {
-  "name": "20201106_103630",
+  "name": "week5open",
   "version": "1.0.0",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "version": "1.0.2",
+  "engines": {
+    "node": ">=13.8.0"
+  },
   "main": "index.js",
   "type": "module",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "body-parser": "^1.19.0"
   }
 }
