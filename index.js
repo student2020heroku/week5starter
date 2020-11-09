@@ -1,6 +1,12 @@
-const express = require('express');
-const fs = require('fs');
+import express from 'express';
+import bodyParser from 'body-parser';
 
-const app = require('./app.js')(express, fs);
+import fs from 'fs';
+import crypto from 'crypto';
+import http from 'http';
+
+import appSrc from './app.js';
+
+const app = appSrc(express, bodyParser, fs, crypto, http);
 
 app.listen(4321);
