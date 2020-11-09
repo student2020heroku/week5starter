@@ -42,6 +42,5 @@ export default (express, bodyParser, fs, crypto, http) => {
     // по предоставляемому обучающимся адресу
     // с тем, что выдаёт по этому же маршруту вот этот код в песочнице
     return app;
-    return app;
 
 }
