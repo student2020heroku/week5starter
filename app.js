@@ -1,4 +1,4 @@
-export default (express, bodyParser, fs, crypto, http) => {
+export default (express, bodyParser, createReadStream, crypto, http) => {
     const app = express();
 
 
@@ -22,7 +22,7 @@ export default (express, bodyParser, fs, crypto, http) => {
     .get('/login/', (req, res) => res.send('goss'))
     .get('/code/', (req, res) => {
         res.set({'Content-Type': 'text/plain; charset=utf-8'});
-        fs.createReadStream(import.meta.url.substring(7)).pipe(res);
+        createReadStream(import.meta.url.substring(7)).pipe(res);
     })
     ;
 
@@ -35,12 +35,8 @@ export default (express, bodyParser, fs, crypto, http) => {
             .on('end', () => res.send(b));
         });
     })
-
-    // проверяющий алгоритм может запустить этот код в своей песочнице
-    // передав ему express и fs
-    // и сравнить то, что выдаёт маршрут /login/ работающего приложения
-    // по предоставляемому обучающимся адресу
-    // с тем, что выдаёт по этому же маршруту вот этот код в песочнице
+    .get('/hello/', (req, res) => res.send('goss'));
+     
     return app;
 
 }
